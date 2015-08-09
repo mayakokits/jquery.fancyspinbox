@@ -1,0 +1,186 @@
+// Settings for jquery.fancyspinbox:
+
+// Height of the spinbox element, without borders.
+$spinbox-height: 2rem !default;
+
+// Item text padding
+$spinbox-padding-left: 0.6rem !default;
+$spinbox-padding-right: 0.6rem !default;
+
+// Width of the spin buttons
+$spinbox-button-width: $spinbox-height*0.9 !default;
+
+// Text color
+$spinbox-color: #16425B !default;
+
+// Main color
+$spinbox-main-color: #16425B !default;
+
+// Background color
+$spinbox-background-color: #F7EACF !default;
+$spinbox-background-color-focus: #D8CDB6 !default;
+
+// Border
+$spinbox-border: 2px solid $spinbox-main-color !default;
+$spinbox-border-radius: 4px !default;
+
+// Dropdown
+$spinbox-dropdown-border: $spinbox-border !default;
+$spinbox-dropdown-border-radius: $spinbox-border-radius !default;
+$spinbox-dropdown-color: $spinbox-color !default;
+$spinbox-dropdown-background-color: $spinbox-background-color !default;
+
+// Items, hovered
+$spinbox-item-hover-color: $spinbox-color !default;
+$spinbox-item-hover-background-color: #81C3D7 !default;
+
+// Items, selected
+$spinbox-selected-color: $spinbox-dropdown-background-color !default;
+$spinbox-selected-background-color: $spinbox-main-color !default;
+
+// Triangle arrows, double (spin) and single (dropdown)
+$spinbox-spin-triangle-size: 7px !default;
+$spinbox-dropdown-triangle-size: 8px !default;
+$spinbox-triangle-color: $spinbox-main-color !default;
+$spinbox-triangle-color-active: #81C3D7 !default;
+
+
+.fancy-spinbox {
+
+  box-sizing: content-box;
+  height: $spinbox-height;
+  border: $spinbox-border;
+  border-radius: $spinbox-border-radius;
+  display: inline-block;
+  position: relative;
+  color: $spinbox-color;
+  background-color: $spinbox-background-color;
+  outline: 0;
+  
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  
+  &:focus {
+    background-color: $spinbox-background-color-focus;
+  }
+  
+  .crop {
+    height: $spinbox-height;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  ul {
+    cursor: default;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  li {
+    width: auto;
+    height: $spinbox-height;
+    line-height: $spinbox-height;
+    padding-left: $spinbox-padding-left;
+    padding-right: $spinbox-padding-right;
+  }
+  
+  ul.dropdown {
+    position: absolute;
+    top: $spinbox-height;
+    left: -9999px;
+    z-index: 999;
+    border: $spinbox-dropdown-border;
+    border-radius: $spinbox-dropdown-border-radius;
+    color: $spinbox-dropdown-color;
+    background-color: $spinbox-dropdown-background-color;
+    
+    &:empty {
+      display: none;
+    }
+    
+    li {
+      white-space: nowrap;
+      overflow: hidden;
+    }
+        
+    li.selected {
+      color: $spinbox-selected-color;
+      background-color: $spinbox-selected-background-color;
+    }
+    
+    li:hover {
+      color: $spinbox-item-hover-color;
+      background-color: $spinbox-item-hover-background-color;
+    }
+  }
+  
+  .buttons {
+    float: right;
+    width: $spinbox-button-width;
+  }
+  
+  button {
+    width: $spinbox-button-width;
+    height: $spinbox-height*0.5;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    display: block;
+    outline: 0;
+    
+    &::-moz-focus-inner {
+      border: 0;
+      outline: 0;
+    }
+    
+    &:active, &.toggle-dropdown:active {
+      &>span.triangle-up {
+        border-bottom-color: $spinbox-triangle-color-active;
+      }
+
+      &>span.triangle-down {
+        border-top-color: $spinbox-triangle-color-active;
+      }
+    }
+    
+    &.toggle-dropdown {
+      height: $spinbox-height;
+      
+      &>span.triangle-down {
+        border-left: $spinbox-dropdown-triangle-size solid transparent;
+        border-right: $spinbox-dropdown-triangle-size solid transparent;
+        border-top: $spinbox-dropdown-triangle-size solid $spinbox-triangle-color; 
+        vertical-align: middle;
+        margin: 0;
+      }
+    }
+  
+    span {
+      width: 0;
+      height: 0;
+      border-left: $spinbox-spin-triangle-size solid transparent;
+      border-right: $spinbox-spin-triangle-size solid transparent;
+      display: inline-block;
+      
+      &.triangle-up {
+        border-bottom: $spinbox-spin-triangle-size solid $spinbox-triangle-color;
+        vertical-align: bottom;
+        margin: 0 0 2px;
+      }
+      
+      &.triangle-down {
+        border-top: $spinbox-spin-triangle-size solid $spinbox-triangle-color;   
+        vertical-align: top;
+        margin: 2px 0 0;
+      }
+      
+    }
+    
+  }
+
+}
