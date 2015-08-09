@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<title>Fancy Spinbox</title>
+		<link rel="stylesheet" href="jquery.fancyspinbox.css" />
+	</head>
+	<body>
+		<h1>Fancy Spinbox</h1>
+		<p>A small jQuery plugin for nice flat select fields</p>
+		
+		<select id="my-menu">
+			<option value="apples" data-text="some <strong>really tasty</strong> apples">some really tasty apples</option>
+			<option value="bananas">Bananas</option>
+			<option value="chocolate">Chocolate</option>
+		</select>
+		
+		<script type="text/javascript" src="http://stupid/mayakokits/bower_components/jquery/dist/jquery.min.js"></script>
+	<!--	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+		<script type="text/javascript" src="jquery.fancyspinbox.js"></script>
+		<script type="text/javascript">
+			jQuery(function($){
+				$('#my-menu').fancySpinbox();
+			});
+		</script>
+	</body>
+</html>
