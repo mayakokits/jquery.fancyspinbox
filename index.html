@@ -3,6 +3,8 @@
 	<head>
 		<title>Fancy Spinbox</title>
 		<link rel="stylesheet" href="jquery.fancyspinbox.css" />
+
+
 	</head>
 	<body>
 		<h1>Fancy Spinbox</h1>
@@ -14,12 +16,26 @@
 			<option value="chocolate">Chocolate</option>
 		</select>
 		
+		<div id="readme"></div>
+		
 		<script type="text/javascript" src="http://stupid/mayakokits/bower_components/jquery/dist/jquery.min.js"></script>
 	<!--	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
 		<script type="text/javascript" src="jquery.fancyspinbox.js"></script>
 		<script type="text/javascript">
 			jQuery(function($){
 				$('#my-menu').fancySpinbox();
+				
+				$.ajax({
+						url: 'https://api.github.com/repos/adobe-fonts/source-code-pro/readme',
+						crossDomain: true,					
+						headers: {
+							'Accept': 'application/vnd.github.v3.html'
+						}
+					})
+					.done(function(html){
+							$('#readme').append($(html));
+						});
+			
 			});
 		</script>
 	</body>
