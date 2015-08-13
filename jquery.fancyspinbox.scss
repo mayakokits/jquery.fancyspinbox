@@ -49,6 +49,7 @@ $spinbox-triangle-color-active: #81C3D7 !default;
 
   box-sizing: content-box;
   height: $spinbox-height;
+  padding-right: $spinbox-button-width;
   border: $spinbox-border;
   border-radius: $spinbox-border-radius;
   display: inline-block;
@@ -86,6 +87,7 @@ $spinbox-triangle-color-active: #81C3D7 !default;
     line-height: $spinbox-height;
     padding-left: $spinbox-padding-left;
     padding-right: $spinbox-padding-right;
+    white-space: nowrap;
   }
   
   ul.dropdown {
@@ -103,7 +105,6 @@ $spinbox-triangle-color-active: #81C3D7 !default;
     }
     
     li {
-      white-space: nowrap;
       overflow: hidden;
     }
         
@@ -119,7 +120,9 @@ $spinbox-triangle-color-active: #81C3D7 !default;
   }
   
   .buttons {
-    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
     width: $spinbox-button-width;
   }
   
