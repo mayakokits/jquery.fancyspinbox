@@ -79,6 +79,7 @@ $spinbox-triangle-color-active: #81C3D7 !default;
     margin: 0;
     padding: 0;
     list-style: none;
+    text-align: left;
   }
   
   li {
@@ -107,13 +108,13 @@ $spinbox-triangle-color-active: #81C3D7 !default;
     li {
       overflow: hidden;
     }
-        
-    li.selected {
+    
+    li.selected, li.selected * {
       color: $spinbox-selected-color;
       background-color: $spinbox-selected-background-color;
     }
     
-    li:hover {
+    li:hover, li:hover * {
       color: $spinbox-item-hover-color;
       background-color: $spinbox-item-hover-background-color;
     }
@@ -127,6 +128,7 @@ $spinbox-triangle-color-active: #81C3D7 !default;
   }
   
   button {
+    position: relative;
     width: $spinbox-button-width;
     height: $spinbox-height*0.5;
     padding: 0;
@@ -155,31 +157,34 @@ $spinbox-triangle-color-active: #81C3D7 !default;
       height: $spinbox-height;
       
       &>span.triangle-down {
+        position: static;
         border-left: $spinbox-dropdown-triangle-size solid transparent;
         border-right: $spinbox-dropdown-triangle-size solid transparent;
-        border-top: $spinbox-dropdown-triangle-size solid $spinbox-triangle-color; 
+        border-top: $spinbox-dropdown-triangle-size solid $spinbox-triangle-color;
+        display: inline-block;
         vertical-align: middle;
         margin: 0;
       }
     }
   
     span {
+      position: absolute;
       width: 0;
       height: 0;
       border-left: $spinbox-spin-triangle-size solid transparent;
       border-right: $spinbox-spin-triangle-size solid transparent;
-      display: inline-block;
+      display: block;
       
       &.triangle-up {
         border-bottom: $spinbox-spin-triangle-size solid $spinbox-triangle-color;
-        vertical-align: bottom;
-        margin: 0 0 2px;
+        bottom: 2px;
+        right: $spinbox-padding-left;
       }
       
       &.triangle-down {
         border-top: $spinbox-spin-triangle-size solid $spinbox-triangle-color;   
-        vertical-align: top;
-        margin: 2px 0 0;
+        top: 2px;
+        right: $spinbox-padding-left;
       }
       
     }
