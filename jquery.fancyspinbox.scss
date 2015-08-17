@@ -128,6 +128,7 @@ $spinbox-triangle-color-active: #81C3D7 !default;
   }
   
   button {
+    position: relative;
     width: $spinbox-button-width;
     height: $spinbox-height*0.5;
     padding: 0;
@@ -156,31 +157,38 @@ $spinbox-triangle-color-active: #81C3D7 !default;
       height: $spinbox-height;
       
       &>span.triangle-down {
+        position: static;
         border-left: $spinbox-dropdown-triangle-size solid transparent;
         border-right: $spinbox-dropdown-triangle-size solid transparent;
-        border-top: $spinbox-dropdown-triangle-size solid $spinbox-triangle-color; 
+        border-top: $spinbox-dropdown-triangle-size solid $spinbox-triangle-color;
+        display: inline-block;
         vertical-align: middle;
         margin: 0;
       }
     }
   
     span {
+      position: absolute;
       width: 0;
       height: 0;
       border-left: $spinbox-spin-triangle-size solid transparent;
       border-right: $spinbox-spin-triangle-size solid transparent;
-      display: inline-block;
+      display: block;
       
       &.triangle-up {
         border-bottom: $spinbox-spin-triangle-size solid $spinbox-triangle-color;
-        vertical-align: bottom;
-        margin: 0 0 2px;
+    //    vertical-align: bottom;
+    //    margin: 0 0 2px;
+        bottom: 2px;
+        right: $spinbox-padding-left;
       }
       
       &.triangle-down {
         border-top: $spinbox-spin-triangle-size solid $spinbox-triangle-color;   
-        vertical-align: top;
-        margin: 2px 0 0;
+   //     vertical-align: top;
+   //     margin: 2px 0 0;
+        top: 2px;
+        right: $spinbox-padding-left;
       }
       
     }
