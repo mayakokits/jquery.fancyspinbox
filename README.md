@@ -31,7 +31,7 @@ On clients without Javascript enabled, it will gracelessly degrade to an unstyle
 You initialize the plugin like this:
 
 ```javascript
-var myMenu = $('#my-menu').fancySpinbox();
+var myMenu = $('#my-menu').fancyspinbox();
 ```
 
 This returns the original select element which will stay in the DOM and which you can refer to as usual:
@@ -45,32 +45,32 @@ myMenu.on('change', function(){
 If you want to programatically change the selected Index, you should use the methods on the plugin object:
 
 ```javascript
-myMenu.data('fancySpinbox').select(1);   // Select the second item in the list
+myMenu.data('fancyspinbox').select(1);   // Select the second item in the list
 ```
 
 You can also give it a spin:
 
 ```javascript
 // Those return the new selected index and `false` if it's the end of the list.
-myMenu.data('fancySpinbox').up();
-myMenu.data('fancySpinbox').down();
+myMenu.data('fancyspinbox').up();
+myMenu.data('fancyspinbox').down();
 ```
 
 The `add()` method lets you add items dynamically. The `value` argument is optional.
 
 ```javascript
-myMenu.data('fancySpinbox').add("text", "value");
+myMenu.data('fancyspinbox').add("text", "value");
 ```
 
 If you need to access the spinbox element, use the `element` object.
 
 ```javascript
-myMenu.data('fancySpinbox').element.css({"border-color": "red"});
+myMenu.data('fancyspinbox').element.css({"border-color": "red"});
 ```
 
 ## HTML in items
 
-Unlike standard `<option>` options, fancySpinbox options can contain HTML. Just set a `data-text` attribute.
+Unlike standard `<option>` options, fancyspinbox options can contain HTML. Just set a `data-text` attribute.
 
 ```html
 <select id="my-menu">
@@ -85,7 +85,7 @@ Unlike standard `<option>` options, fancySpinbox options can contain HTML. Just 
 You can pass options as you initialize the plugin:
 
 ```javascript
-$('#my-menu').fancySpinbox({
+$('#my-menu').fancyspinbox({
 	cycle: true,
 	items: [
 			{value: "grapes", text: "Sweet grapes"},
