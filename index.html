@@ -105,7 +105,12 @@
 						}
 					})
 					.done(function(html){
-							$('#readme').append($(html));
+							var $html = $(html);
+							
+							// remove paragraph with link to the demo page
+							$html.find('a[href="http://mayakokits.github.io/jquery.fancyspinbox"]').parent('p').remove();
+							
+							$('#readme').append($html);
 						});
 				
 			});
