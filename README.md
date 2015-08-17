@@ -3,7 +3,7 @@
 This lightweight jQuery plugin turns a select dropdown into a spinbox with up and down arrows (and an optional dropdown menu), a simple flat design and items sliding into view as you select them.
 It uses CSS transitions with a jQuery fallback and is accessible to keyboards and screen readers.
 
-<p class="readme-hide">You can see a <a href="http://mayakokits.github.io/jquery.fancyspinbox">demo here</a>.</p>
+You can see a [demo here](http://mayakokits.github.io/jquery.fancyspinbox).
 
 This plugin is under development. A To Do list might include:
 - a `remove()` function
