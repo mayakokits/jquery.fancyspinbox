@@ -59,13 +59,13 @@ myMenu.data('fancyspinbox').down();
 The `add()` method lets you add items dynamically. The `value` argument is optional.
 
 ```javascript
-myMenu.data('fancyspinbox').add("text", "value");
+myMenu.data('fancyspinbox').add('text', 'value');
 ```
 
 If you need to access the spinbox element, use the `element` object.
 
 ```javascript
-myMenu.data('fancyspinbox').element.css({"border-color": "red"});
+myMenu.data('fancyspinbox').element.css({'border-color': 'red'});
 ```
 
 ## HTML in items
@@ -88,17 +88,17 @@ You can pass options as you initialize the plugin:
 $('#my-menu').fancyspinbox({
 	cycle: true,
 	items: [
-			{value: "grapes", text: "Sweet grapes"},
-			{value: "potatoes", text: "<strong>Hot</strong> potatoes"}
+			{value: 'grapes', text: 'Sweet grapes'},
+			{value: 'potatoes', text: '<strong>Hot</strong> potatoes'}
 		]
 	});
 ```
-	
+
 Here is a list of the options available:
 
 | Property | Default value | Description |
 | :------- | :------------ | :---------- |
-| `items` | `[]` | An array of items to add to the list on initialisation. Items can be strings or objects like `{"value": "foo", "text": "bar"}` |
+| `items` | `[]` | An array of items to add to the list on initialisation. Items can be strings or objects like `{'value': 'foo', 'text': 'bar'}` |
 | `spinButtons` | `true` | Display spin buttons. |
 | `dropdownButton` | `false` | Display a dropdown button. Overrides the spinButtons option and sets dropdown to true. |
 | `dropdown` | `true` | Display the dropdown. | 
