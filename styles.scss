@@ -1,0 +1,38 @@
+/* =========================== *
+ * fancyspinbox styles:        *
+ * =========================== */
+
+@import 'jquery.fancyspinbox';
+
+/* =========================== *
+ * styles for the demo site:   *
+ * =========================== */
+
+// Coolors Exported Palette - coolors.co/f7eacf-de6e4b-d8cdb6-16425b-81c3d7
+
+$color1: #f7eacf; //rgba(247, 234, 207, 100)
+$color2: #de6e4b; //rgba(222, 110, 75, 100)
+$color3: #d8cdb6; //rgba(216, 205, 182, 100)
+$color4: #16425b; //rgba(22, 66, 91, 100)
+$color5: #81c3d7; //rgba(129, 195, 215, 100)
+
+* {
+  color: $color4;
+  font-family: 'Open Sans', sans-serif;
+}
+
+header h1 {
+  font-size: 4rem;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  margin: 3rem 0 1rem;
+}
+
+code, kbd, pre {
+  font-family: 'Droid Sans Mono', monospace;
+}
+
+body {
+  width: 80%;
+  max-width: 45rem;
+  margin: 0 auto;
+}

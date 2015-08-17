@@ -1,3 +1,6 @@
+/* =========================== *
+ * fancyspinbox styles:        *
+ * =========================== */
 .fancy-spinbox {
   box-sizing: content-box;
   height: 2rem;
@@ -113,4 +116,28 @@
   border-top: 7px solid #16425B;
   vertical-align: top;
   margin: 2px 0 0;
+}
+
+/* =========================== *
+ * styles for the demo site:   *
+ * =========================== */
+* {
+  color: #16425b;
+  font-family: 'Open Sans', sans-serif;
+}
+
+header h1 {
+  font-size: 4rem;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  margin: 3rem 0 1rem;
+}
+
+code, kbd, pre {
+  font-family: 'Droid Sans Mono', monospace;
+}
+
+body {
+  width: 80%;
+  max-width: 45rem;
+  margin: 0 auto;
 }
