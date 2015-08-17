@@ -160,10 +160,18 @@ header h1 {
   text-align: center;
 }
 
+.js #my-menu {
+  display: none;
+}
+
 #spinbox-options {
   border: 0 none;
   margin: 0rem 2rem 3rem;
   padding: 0;
+}
+
+.no-js #spinbox-options, .no-js #spinbox-options-label {
+  display: none;
 }
 
 code, kbd, pre {

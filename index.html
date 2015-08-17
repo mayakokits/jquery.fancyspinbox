@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
 		<link href='//fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps:700|Open+Sans|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
 		<link rel="stylesheet" href="styles.css" />
+		<script src="modernizr.custom.js" type="text/javascript"></script>
 		
 		<title>Fancy Spinbox</title>
 	</head>
@@ -29,7 +30,11 @@
 				</select>
 			</div>
 			
-		  <p>Try out some of the options:</p> 
+			<noscript>
+				<p style="text-align: center;">Without Javascript, the whole thing degrades to this.</p>
+			</noscript>
+			
+		  <p id="spinbox-options-label">Try out some of the options:</p> 
 		  <fieldset id="spinbox-options"> 
 		    
 				<input type="checkbox" class="chooseOptions" name="options" value="spinButtons" id="check1" checked />
@@ -50,13 +55,12 @@
 			
 			<footer>
 				<hr />
-				<p>A gadget by <a href="http://mayakokits.com">Maya Kokits</a></p>
+				<p>A gadget by <a href="http://mayakokits.com">Maya Kokits</a>. Download <a href="#">.zip</a> or <a href="#">fork it</a>.</p>
 			</footer>
 		
 		</div>
 		
-		<script type="text/javascript" src="http://stupid/mayakokits/bower_components/jquery/dist/jquery.min.js"></script>
-	<!--	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script type="text/javascript" src="jquery.fancyspinbox.js"></script>
 		<script type="text/javascript">
 			jQuery(function($){
@@ -92,6 +96,7 @@
 						});
 					});
 				
+				// get the readme				
 				$.ajax({
 						url: 'https://api.github.com/repos/adobe-fonts/source-code-pro/readme',
 						crossDomain: true,					

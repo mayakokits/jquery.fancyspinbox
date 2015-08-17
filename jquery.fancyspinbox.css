@@ -28,7 +28,6 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  text-align: left;
 }
 .fancy-spinbox li {
   width: auto;
@@ -54,11 +53,11 @@
 .fancy-spinbox ul.dropdown li {
   overflow: hidden;
 }
-.fancy-spinbox ul.dropdown li.selected, .fancy-spinbox ul.dropdown li.selected * {
+.fancy-spinbox ul.dropdown li.selected {
   color: #F7EACF;
   background-color: #16425B;
 }
-.fancy-spinbox ul.dropdown li:hover, .fancy-spinbox ul.dropdown li:hover * {
+.fancy-spinbox ul.dropdown li:hover {
   color: #16425B;
   background-color: #81C3D7;
 }
@@ -69,7 +68,6 @@
   width: 1.8rem;
 }
 .fancy-spinbox button {
-  position: relative;
   width: 1.8rem;
   height: 1rem;
   padding: 0;
@@ -93,29 +91,26 @@
   height: 2rem;
 }
 .fancy-spinbox button.toggle-dropdown > span.triangle-down {
-  position: static;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-top: 8px solid #16425B;
-  display: inline-block;
   vertical-align: middle;
   margin: 0;
 }
 .fancy-spinbox button span {
-  position: absolute;
   width: 0;
   height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  display: block;
+  display: inline-block;
 }
 .fancy-spinbox button span.triangle-up {
   border-bottom: 7px solid #16425B;
-  bottom: 2px;
-  right: 0.6rem;
+  vertical-align: bottom;
+  margin: 0 0 2px;
 }
 .fancy-spinbox button span.triangle-down {
   border-top: 7px solid #16425B;
-  top: 2px;
-  right: 0.6rem;
+  vertical-align: top;
+  margin: 2px 0 0;
 }
