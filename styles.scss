@@ -10,6 +10,7 @@
 
 // Coolors Exported Palette - coolors.co/f7eacf-de6e4b-d8cdb6-16425b-81c3d7
 
+$white: #F7F2E8;
 $color1: #f7eacf; //rgba(247, 234, 207, 100)
 $color2: #de6e4b; //rgba(222, 110, 75, 100)
 $color3: #d8cdb6; //rgba(216, 205, 182, 100)
@@ -21,18 +22,267 @@ $color5: #81c3d7; //rgba(129, 195, 215, 100)
   font-family: 'Open Sans', sans-serif;
 }
 
-header h1 {
-  font-size: 4rem;
-  font-family: 'Oleo Script Swash Caps', cursive;
-  margin: 3rem 0 1rem;
+body {
+  background-color: $color2;
+}
+
+#page {
+  position: relative;
+  width: 80%;
+  max-width: 45rem;
+  margin: 3rem auto;
+  padding: 2rem 3rem;
+  border: 2px solid $color4;
+  border-radius: 5px;
+  background-color: $white;
+}
+
+header {
+  text-align: center;
+  
+  h1 {
+    font-size: 4rem;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    margin: 2rem 0 1rem;
+  }
+}
+
+#spinbox-container {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+#spinbox-options {
+    border: 0 none;
+    margin: 0rem 2rem 3rem;
+    padding: 0;
 }
 
 code, kbd, pre {
+  font-size: 0.97em;
   font-family: 'Droid Sans Mono', monospace;
 }
 
-body {
-  width: 80%;
-  max-width: 45rem;
-  margin: 0 auto;
+pre {
+  background-color: #2B2A28;
+  border-radius: 5px;
+  color: $color1;
+  padding: 1em;
 }
+
+#readme code {
+    background-color: #f7eacf;
+    border-radius: 4px;
+    font-size: 0.9em;
+    padding: 0.2em 0.3em 0.1em;
+}
+
+#readme h1:first-of-type {
+  display: none;
+}
+
+hr {
+  background: $color4;
+  border: 0 none;
+  height: 1px;
+}
+
+footer {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+
+/* thanks to Stephen Morley for the checkbox styles */
+input[type=checkbox]:not(old) {
+  width     : 2em;
+  margin    : 0;
+  padding   : 0;
+  font-size : 1em;
+  opacity   : 0;
+}
+
+input[type=checkbox]:not(old) + label {
+  display      : inline-block;
+  margin-left  : -2em;
+  margin-bottom: 0.3em;
+  line-height  : 1.5em;
+}
+
+input[type=checkbox]:not(old) + label > span {
+  display          : inline-block;
+  width            : 0.875em;
+  height           : 0.875em;
+  margin           : 0.25em 0.5em 0.25em 0.25em;
+  border           : 2px solid $color4;
+  border-radius    : 0.25em;
+  background       : $color1;
+  vertical-align   : bottom;
+}
+
+input[type=checkbox]:not(old):focus + label > span {
+  background: $color3;
+}
+ 
+input[type=checkbox]:not(old):checked + label > span > span {
+  display          : block;
+  width            : 0.5em;
+  height           : 0.5em;
+  margin           : 0.125em;
+  border           : 0.0625em solid $color4;
+  border-radius    : 0.125em;
+  background       : $color4;
+}
+
+
+/*!
+ * "Fork me on GitHub" CSS ribbon v0.1.1 | MIT License
+ * https://github.com/simonwhitaker/github-fork-ribbon-css
+*/
+
+/* Left will inherit from right (so we don't need to duplicate code) */
+.github-fork-ribbon {
+  /* The right and left classes determine the side we attach our banner to */
+  position: absolute;
+
+  /* Add a bit of padding to give some substance outside the "stitching" */
+  padding: 2px 0;
+
+  /* Set the base colour */
+  background-color: $color4;
+
+  /* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.15)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+
+  /* Set the font */
+  font: 700 13px 'Open Sans', sans-serif;
+
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.github-fork-ribbon a,
+.github-fork-ribbon a:hover {
+  /* Set the text properties */
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+  text-align: center;
+
+  /* Set the geometry. If you fiddle with these you'll also need
+     to tweak the top and right values in .github-fork-ribbon. */
+  width: 230px;
+  line-height: 20px;
+
+  /* Set the layout properties */
+  display: inline-block;
+  padding: 2px 0;
+
+  border: 0 none;
+}
+
+.github-fork-ribbon-wrapper {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.github-fork-ribbon-wrapper.fixed {
+  position: fixed;
+}
+
+.github-fork-ribbon-wrapper.right {
+  right: 0;
+}
+
+.github-fork-ribbon-wrapper.right .github-fork-ribbon {
+  top: 52px;
+  right: -49px;
+
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/*
+ * GitHub style for Pygments
+ * Courtesy of GitHub.com
+ * 
+ * thanks to Aahan Krish
+ */
+
+.pl-hll { background-color: #f8f8f8; border: 1px solid #ccc; padding: 6px 10px; border-radius: 3px; }
+.pl-c { color: #999988; font-style: italic; }
+.pl-err { color: #a61717; background-color: #e3d2d2; }
+.pl-k { font-weight: bold; }
+.pl-o { font-weight: bold; }
+.pl-cm { color: #999988; font-style: italic; }
+.pl-cp { color: #999999; font-weight: bold; }
+.pl-c1 { color: #999988; font-style: italic; }
+.pl-cs { color: #999999; font-weight: bold; font-style: italic; }
+.pl-gd { color: #000000; background-color: #ffdddd; }
+.pl-gd .x { color: #000000; background-color: #ffaaaa; }
+.pl-ge { font-style: italic; }
+.pl-gr { color: #aa0000; }
+.pl-gh { color: #999999; }
+.pl-gi { color: #000000; background-color: #ddffdd; }
+.pl-gi .x { color: #000000; background-color: #aaffaa; }
+.pl-go { color: #888888; }
+.pl-gp { color: #555555; }
+.pl-gs { font-weight: bold; }
+.pl-gu { color: #800080; font-weight: bold; }
+.pl-gt { color: #aa0000; }
+.pl-kc { font-weight: bold; }
+.pl-kd { font-weight: bold; }
+.pl-kn { font-weight: bold; }
+.pl-kp { font-weight: bold; }
+.pl-kr { font-weight: bold; }
+.pl-kt { color: #445588; font-weight: bold; }
+.pl-m { color: #009999; }
+.pl-s { color: #dd1144; }
+.pl-n { color: #333333; }
+.pl-na { color: teal; }
+.pl-nb { color: #0086b3; }
+.pl-nc { color: #445588; font-weight: bold; }
+.pl-no { color: teal; }
+.pl-ni { color: purple; }
+.pl-ne { color: #990000; font-weight: bold; }
+.pl-nf { color: #990000; font-weight: bold; }
+.pl-nn { color: #555555; }
+.pl-nt { color: navy; }
+.pl-nv { color: teal; }
+.pl-ow { font-weight: bold; }
+.pl-w { color: #bbbbbb; }
+.pl-mf { color: #009999; }
+.pl-mh { color: #009999; }
+.pl-mi { color: #009999; }
+.pl-mo { color: #009999; }
+.pl-sb { color: #dd1144; }
+.pl-sc { color: #dd1144; }
+.pl-sd { color: #dd1144; }
+.pl-s2 { color: #dd1144; }
+.pl-se { color: #dd1144; }
+.pl-sh { color: #dd1144; }
+.pl-si { color: #dd1144; }
+.pl-sx { color: #dd1144; }
+.pl-sr { color: #009926; }
+.pl-s1 { color: #dd1144; }
+.pl-ss { color: #990073; }
+.pl-bp { color: #999999; }
+.pl-vc { color: teal; }
+.pl-vg { color: teal; }
+.pl-vi { color: teal; }
+.pl-il { color: #009999; }
+.pl-gc { color: #999; background-color: #EAF2F5; }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 	<head>
+		<meta charset="UTF-8" />
 		<link href='//fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps:700|Open+Sans|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
 		<link rel="stylesheet" href="styles.css" />
@@ -8,29 +9,88 @@
 		<title>Fancy Spinbox</title>
 	</head>
 	<body>
-		<header>
-			<h1>Fancy Spinbox</h1>
-			<p>A small jQuery plugin for nice flat select menus</p>
-		</header>
+		<div id="page">
+	    <div class="github-fork-ribbon-wrapper right">
+	        <div class="github-fork-ribbon">
+	            <a href="#">Fork me on GitHub</a>
+	        </div>
+	    </div>
+			
+			<header>
+				<h1>Fancy Spinbox</h1>
+				<p>A small jQuery plugin for spinbox-style select dropdowns</p>
+			</header>
+			
+			<div id="spinbox-container">
+				<select id="my-menu">
+					<option value="apples" data-text="some <strong>really tasty</strong> apples">some really tasty apples</option>
+					<option value="bananas">Bananas</option>
+					<option value="chocolate">Chocolate</option>
+				</select>
+			</div>
+			
+		  <p>Try out some of the options:</p> 
+		  <fieldset id="spinbox-options"> 
+		    
+				<input type="checkbox" class="chooseOptions" name="options" value="spinButtons" id="check1" checked />
+				<label for="check1"><span><span></span></span><code>spinButtons</code></label>
+				<br />
+				<input type="checkbox" class="chooseOptions" name="options" value="dropdownButton" id="check2" />
+				<label for="check2"><span><span></span></span><code>dropdownButton</code></label> 
+				<br />
+				<input type="checkbox" class="chooseOptions" name="options" value="dropdown" id="check3" checked />
+				<label for="check3"><span><span></span></span><code>dropdown</code></label> 
+				<br />
+				<input type="checkbox" class="chooseOptions" name="options" value="cycle" id="check4" />
+				<label for="check4"><span><span></span></span><code>cycle</code></label> 
+		    
+		  </fieldset> 
+			
+			<div id="readme"></div>
+			
+			<footer>
+				<hr />
+				<p>A gadget by <a href="http://mayakokits.com">Maya Kokits</a></p>
+			</footer>
 		
-		<select id="my-menu">
-			<option value="apples" data-text="some <strong>really tasty</strong> apples">some really tasty apples</option>
-			<option value="bananas">Bananas</option>
-			<option value="chocolate">Chocolate</option>
-		</select>
-		
-		<div id="readme"></div>
-		
-		<footer>
-			<p>A gadget by <a href="http://mayakokits.com">Maya Kokits</a></p>
-		</footer>
+		</div>
 		
 		<script type="text/javascript" src="http://stupid/mayakokits/bower_components/jquery/dist/jquery.min.js"></script>
 	<!--	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
 		<script type="text/javascript" src="jquery.fancyspinbox.js"></script>
 		<script type="text/javascript">
 			jQuery(function($){
-				$('#my-menu').fancySpinbox();
+				var $spinbox = $('#my-menu'),
+					$checkBoxes = $('.chooseOptions');
+
+				function getSelectedOptions(){
+						var options = {};
+						for(var i=0,j=$checkBoxes.length; i<j; i++){
+							options[$checkBoxes[i].value] = $checkBoxes[i].checked;
+						};
+						return options;
+					};
+				
+				$spinbox.fancyspinbox(getSelectedOptions());
+				
+				$checkBoxes.change(function(e){
+					$('#spinbox-container').animate({
+							opacity: 0							
+						}, {
+							duration: 200,
+							complete: function(){
+								// get rid of the old fancyspinbox
+								$spinbox.data('fancyspinbox').element.remove();
+								$spinbox.removeData('fancyspinbox');
+								
+								// have a new one
+								$spinbox.fancyspinbox(getSelectedOptions());
+								// new fancyspinbox inherits display: none from the select element, so: 
+								$spinbox.data('fancyspinbox').element.show();
+								$('#spinbox-container').animate({opacity: 1}, {duration: 200});
+							}
+						});
+					});
 				
 				$.ajax({
 						url: 'https://api.github.com/repos/adobe-fonts/source-code-pro/readme',
@@ -42,7 +102,7 @@
 					.done(function(html){
 							$('#readme').append($(html));
 						});
-			
+				
 			});
 		</script>
 	</body>
