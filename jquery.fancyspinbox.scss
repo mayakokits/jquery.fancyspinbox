@@ -79,6 +79,7 @@ $spinbox-triangle-color-active: #81C3D7 !default;
     margin: 0;
     padding: 0;
     list-style: none;
+    text-align: left;
   }
   
   li {
@@ -107,13 +108,13 @@ $spinbox-triangle-color-active: #81C3D7 !default;
     li {
       overflow: hidden;
     }
-        
-    li.selected {
+    
+    li.selected, li.selected * {
       color: $spinbox-selected-color;
       background-color: $spinbox-selected-background-color;
     }
     
-    li:hover {
+    li:hover, li:hover * {
       color: $spinbox-item-hover-color;
       background-color: $spinbox-item-hover-background-color;
     }
