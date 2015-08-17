@@ -3,7 +3,7 @@
 This lightweight jQuery plugin turns a select dropdown into a spinbox with up and down arrows (and an optional dropdown menu), a simple flat design and items sliding into view as you select them.
 It uses CSS transitions with a jQuery fallback and is accessible to keyboards and screen readers.
 
-You can see a [demo here]().
+<p class="readme-hide">You can see a <a href="http://mayakokits.github.io/jquery.fancyspinbox">demo here</a>.</p>
 
 This plugin is under development. A To Do list might include:
 - a `remove()` function
@@ -97,16 +97,16 @@ $('#my-menu').fancyspinbox({
 Here is a list of the options available:
 
 | Property | Default value | Description |
-| -------- | ------------- | ----------- |
-| items | empty array | An array of items to add to the list on initialisation. Items can be strings or objects like {"value": "foo", "text": "bar"} |
-| spinButtons | true | Display spin buttons. |
-| dropdownButton | false | Display a dropdown button. Overrides the spinButtons option and sets dropdown to true. |
-| dropdown | true | Display the dropdown. | 
-| cycle | false | Cycle through the items, don't stop at the end of the list. |
-| scroll | true | Animate the spinbox. |
-| scrollDuration | 300 | Duration of the scroll transition. |
-| flipSpinDirection | false | Flip the spin button's direction. |
-| focusOnSpin | false | Give the focus to the spinbox if a spin button is clicked. |
+| :------- | :------------ | :---------- |
+| `items` | `[]` | An array of items to add to the list on initialisation. Items can be strings or objects like `{"value": "foo", "text": "bar"}` |
+| `spinButtons` | `true` | Display spin buttons. |
+| `dropdownButton` | `false` | Display a dropdown button. Overrides the spinButtons option and sets dropdown to true. |
+| `dropdown` | `true` | Display the dropdown. | 
+| `cycle` | `false` | Cycle through the items, don't stop at the end of the list. |
+| `scroll` | `true` | Animate the spinbox. |
+| `scrollDuration` | `300` | Duration of the scroll transition. |
+| `flipSpinDirection` | `false` | Flip the spin button's direction. |
+| `focusOnSpin` | `false` | Give the focus to the spinbox if a spin button is clicked. |
 
  
 	
