@@ -174,16 +174,20 @@ header h1 {
   display: none;
 }
 
-code, kbd, pre {
-  font-size: 0.97em;
+code, kbd, pre, pre span {
+  font-size: 0.97rem;
   font-family: 'Droid Sans Mono', monospace;
 }
 
 pre {
   background-color: #2B2A28;
   border-radius: 5px;
-  color: #f7eacf;
   padding: 1em;
+  overflow-x: auto;
+}
+
+pre, pre span {
+  color: #f7eacf;
 }
 
 #readme code {
@@ -192,9 +196,18 @@ pre {
   font-size: 0.9em;
   padding: 0.2em 0.3em 0.1em;
 }
-
 #readme h1:first-of-type {
   display: none;
+}
+#readme table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+#readme td, #readme th {
+  border: 1px solid #d8cdb6;
+  font-size: 0.95em;
+  padding: 0.2em;
+  vertical-align: top;
 }
 
 hr {
@@ -316,279 +329,42 @@ input[type=checkbox]:not(old):checked + label > span > span {
 }
 
 /*
- * GitHub style for Pygments
- * Courtesy of GitHub.com
- * 
- * thanks to Aahan Krish
+ * Pygments styles
  */
-.pl-hll {
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  padding: 6px 10px;
-  border-radius: 3px;
+.pl-ent {
+  color: #81c3d7;
 }
 
-.pl-c {
-  color: #999988;
-  font-style: italic;
+.pl-e {
+  color: #d8cdb6;
 }
 
-.pl-err {
-  color: #a61717;
-  background-color: #e3d2d2;
+.pl-s {
+  color: #de6e4b;
+}
+
+.pl-pds {
+  color: #de6e4b;
 }
 
 .pl-k {
-  font-weight: bold;
-}
-
-.pl-o {
-  font-weight: bold;
-}
-
-.pl-cm {
-  color: #999988;
-  font-style: italic;
-}
-
-.pl-cp {
-  color: #999999;
+  color: #81c3d7;
   font-weight: bold;
 }
 
 .pl-c1 {
-  color: #999988;
-  font-style: italic;
+  color: #d8cdb6;
 }
 
-.pl-cs {
-  color: #999999;
-  font-weight: bold;
-  font-style: italic;
+.pl-en {
+  color: #f7eacf;
 }
 
-.pl-gd {
-  color: #000000;
-  background-color: #ffdddd;
-}
-
-.pl-gd .x {
-  color: #000000;
-  background-color: #ffaaaa;
-}
-
-.pl-ge {
-  font-style: italic;
-}
-
-.pl-gr {
-  color: #aa0000;
-}
-
-.pl-gh {
-  color: #999999;
-}
-
-.pl-gi {
-  color: #000000;
-  background-color: #ddffdd;
-}
-
-.pl-gi .x {
-  color: #000000;
-  background-color: #aaffaa;
-}
-
-.pl-go {
-  color: #888888;
-}
-
-.pl-gp {
-  color: #555555;
-}
-
-.pl-gs {
+.pl-v {
+  color: #81c3d7;
   font-weight: bold;
 }
 
-.pl-gu {
-  color: #800080;
-  font-weight: bold;
-}
-
-.pl-gt {
-  color: #aa0000;
-}
-
-.pl-kc {
-  font-weight: bold;
-}
-
-.pl-kd {
-  font-weight: bold;
-}
-
-.pl-kn {
-  font-weight: bold;
-}
-
-.pl-kp {
-  font-weight: bold;
-}
-
-.pl-kr {
-  font-weight: bold;
-}
-
-.pl-kt {
-  color: #445588;
-  font-weight: bold;
-}
-
-.pl-m {
-  color: #009999;
-}
-
-.pl-s {
-  color: #dd1144;
-}
-
-.pl-n {
-  color: #333333;
-}
-
-.pl-na {
-  color: teal;
-}
-
-.pl-nb {
-  color: #0086b3;
-}
-
-.pl-nc {
-  color: #445588;
-  font-weight: bold;
-}
-
-.pl-no {
-  color: teal;
-}
-
-.pl-ni {
-  color: purple;
-}
-
-.pl-ne {
-  color: #990000;
-  font-weight: bold;
-}
-
-.pl-nf {
-  color: #990000;
-  font-weight: bold;
-}
-
-.pl-nn {
-  color: #555555;
-}
-
-.pl-nt {
-  color: navy;
-}
-
-.pl-nv {
-  color: teal;
-}
-
-.pl-ow {
-  font-weight: bold;
-}
-
-.pl-w {
-  color: #bbbbbb;
-}
-
-.pl-mf {
-  color: #009999;
-}
-
-.pl-mh {
-  color: #009999;
-}
-
-.pl-mi {
-  color: #009999;
-}
-
-.pl-mo {
-  color: #009999;
-}
-
-.pl-sb {
-  color: #dd1144;
-}
-
-.pl-sc {
-  color: #dd1144;
-}
-
-.pl-sd {
-  color: #dd1144;
-}
-
-.pl-s2 {
-  color: #dd1144;
-}
-
-.pl-se {
-  color: #dd1144;
-}
-
-.pl-sh {
-  color: #dd1144;
-}
-
-.pl-si {
-  color: #dd1144;
-}
-
-.pl-sx {
-  color: #dd1144;
-}
-
-.pl-sr {
-  color: #009926;
-}
-
-.pl-s1 {
-  color: #dd1144;
-}
-
-.pl-ss {
-  color: #990073;
-}
-
-.pl-bp {
-  color: #999999;
-}
-
-.pl-vc {
-  color: teal;
-}
-
-.pl-vg {
-  color: teal;
-}
-
-.pl-vi {
-  color: teal;
-}
-
-.pl-il {
-  color: #009999;
-}
-
-.pl-gc {
-  color: #999;
-  background-color: #EAF2F5;
+.pl-c {
+  color: #8C8983;
 }
