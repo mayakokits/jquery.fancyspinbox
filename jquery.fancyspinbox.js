@@ -29,12 +29,12 @@
   })();
 
 	// this is the constructor for the plugin object
-	var FancySpinbox = function(origSelect, options){
+	var Fancyspinbox = function(origSelect, options){
 		
 		// private variables
 		
 		var $origSelect = $(origSelect), // original select element
-			$fancy,				// fancySpinbox element
+			$fancy,				// fancyspinbox element
 			$items,				// the children of .crop ul 
 			obj = this,		// the plugin object
 			id,						// unique id per element, ie. fancy-spinbox-3
@@ -354,17 +354,17 @@
 	};
 	
 	// Plugin wrapper function
-	$.fn.fancySpinbox = function(options){
+	$.fn.fancyspinbox = function(options){
 		for(var i=0,j=this.length; i<j; i++){
 			
 			// Return early if this element already has a plugin instance
-			if ($.data(this[i], 'fancySpinbox')) return;
+			if ($.data(this[i], 'fancyspinbox')) return;
 			
 			// Instanciate the plugin
-			var fancySpinbox = new FancySpinbox(this[i], options);
+			var fancyspinbox = new Fancyspinbox(this[i], options);
 
 			// Store plugin object in this element's data
-			$.data(this[i], 'fancySpinbox', fancySpinbox);
+			$.data(this[i], 'fancyspinbox', fancyspinbox);
 
 		};
 		return this;
