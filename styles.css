@@ -1,6 +1,12 @@
 /* =========================== *
  * fancyspinbox styles:        *
  * =========================== */
+/*
+ * jquery.fancyspinbox.js
+ * version 0.1.0
+ * (c) 2015 Maya Kokits
+ * License: MIT
+ */
 .fancy-spinbox {
   box-sizing: content-box;
   height: 2rem;
@@ -195,6 +201,12 @@ pre, pre span {
   border-radius: 4px;
   font-size: 0.9em;
   padding: 0.2em 0.3em 0.1em;
+}
+#readme pre code {
+  background-color: transparent;
+  font-size: inherit;
+  padding: 0;
+  color: inherit;
 }
 #readme h1:first-of-type {
   display: none;

@@ -89,6 +89,12 @@ pre, pre span {
     font-size: 0.9em;
     padding: 0.2em 0.3em 0.1em;
   }
+  pre code {
+    background-color: transparent;
+    font-size: inherit;
+    padding: 0;
+    color: inherit;
+  }
 
   h1:first-of-type {
     display: none;
