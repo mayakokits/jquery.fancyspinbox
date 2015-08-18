@@ -227,7 +227,7 @@
 				obj.element = $fancy;
 				
 				// get the height of the spinbox and shift the selected element into view
-				spinboxHeight = $fancy.find(".crop li").height();
+				spinboxHeight = $fancy.innerHeight();
 				var $croppedList = $fancy.find(".crop ul").css({"margin-top": spinboxHeight * selected * -1});
 				if (settings.scroll) $croppedList.css({"transition": "margin-top " + settings.scrollDuration + "ms ease"});
 				
