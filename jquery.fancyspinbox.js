@@ -1,5 +1,6 @@
 /*
  * jquery.fancyspinbox.js
+ * version 0.1.0
  * (c) 2015 Maya Kokits
  * License: MIT
  */
