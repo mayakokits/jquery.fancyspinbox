@@ -14,6 +14,12 @@ This plugin is under development. A To Do list might include:
 
 As you might have guessed, this depends on jQuery. Apart from that, all you need is `jquery.fancyspinbox.js` and the styles in `jquery.fancyspinbox.css`. If you want to style the Spinbox, I recommend tweaking the Sass file.
 
+### Install with Bower
+
+```
+$ bower install jquery.fancyspinbox
+```
+
 ## Usage
 
 The markup you need looks familiar:
@@ -100,7 +106,7 @@ Here is a list of the options available:
 | :------- | :------------ | :---------- |
 | `items` | `[]` | An array of items to add to the list on initialisation. Items can be strings or objects like `{'value': 'foo', 'text': 'bar'}` |
 | `spinButtons` | `true` | Display spin buttons. |
-| `dropdownButton` | `false` | Display a dropdown button. Overrides the spinButtons option and sets dropdown to true. |
+| `dropdownButton` | `false` | Display a dropdown button. Overrides the `spinButtons` option and sets `dropdown` to true. |
 | `dropdown` | `true` | Display the dropdown. | 
 | `cycle` | `false` | Cycle through the items, don't stop at the end of the list. |
 | `scroll` | `true` | Animate the spinbox. |
