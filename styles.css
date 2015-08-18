@@ -199,6 +199,12 @@ pre, pre span {
 #readme h1:first-of-type {
   display: none;
 }
+#readme h1, #readme h2, #readme h3 {
+  margin: 2.2rem 0 0;
+}
+#readme p {
+  margin: 1.3rem 0 1.2rem;
+}
 #readme table {
   border-collapse: collapse;
   border-spacing: 0;

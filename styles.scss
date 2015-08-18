@@ -93,6 +93,14 @@ pre, pre span {
   h1:first-of-type {
     display: none;
   }
+
+  h1, h2, h3 {
+      margin: 2.2rem 0 0;
+  }
+  
+  p {
+      margin: 1.3rem 0 1.2rem;
+  }
   
   table {
     border-collapse: collapse;
