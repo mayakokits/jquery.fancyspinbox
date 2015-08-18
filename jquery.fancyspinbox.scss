@@ -56,7 +56,7 @@ $spinbox-triangle-color-active: #81C3D7 !default;
 
   box-sizing: content-box;
   height: $spinbox-height;
-  padding-right: $spinbox-button-width;
+  padding: 0 $spinbox-button-width 0 0;
   border: $spinbox-border;
   border-radius: $spinbox-border-radius;
   display: inline-block;
@@ -76,6 +76,9 @@ $spinbox-triangle-color-active: #81C3D7 !default;
   }
   
   .crop {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
     height: $spinbox-height;
     display: inline-block;
     overflow: hidden;
@@ -85,6 +88,7 @@ $spinbox-triangle-color-active: #81C3D7 !default;
     cursor: default;
     margin: 0;
     padding: 0;
+    border: 0 none;
     list-style: none;
     text-align: left;
   }
@@ -93,8 +97,8 @@ $spinbox-triangle-color-active: #81C3D7 !default;
     width: auto;
     height: $spinbox-height;
     line-height: $spinbox-height;
-    padding-left: $spinbox-padding-left;
-    padding-right: $spinbox-padding-right;
+    margin: 0;
+    padding: 0 $spinbox-padding-right 0 $spinbox-padding-left;
     white-space: nowrap;
   }
   
@@ -141,9 +145,14 @@ $spinbox-triangle-color-active: #81C3D7 !default;
     padding: 0;
     margin: 0;
     border: none;
+    border-radius: 0;
     background-color: transparent;
     display: block;
     outline: 0;
+    cursor: default;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
     
     &::-moz-focus-inner {
       border: 0;
