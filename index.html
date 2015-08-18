@@ -83,6 +83,9 @@
 						}, {
 							duration: 200,
 							complete: function(){
+								// switch back to spinButtons if dropdownButton was active
+								if (e.target.value == 'spinButtons') $('#check2')[0].checked = false;
+								
 								// get rid of the old fancyspinbox
 								$spinbox.data('fancyspinbox').element.remove();
 								$spinbox.removeData('fancyspinbox');
@@ -92,6 +95,12 @@
 								// new fancyspinbox inherits display: none from the select element, so: 
 								$spinbox.data('fancyspinbox').element.show();
 								$('#spinbox-container').animate({opacity: 1}, {duration: 200});
+								
+								// the plugin has its logic to determine which features override others
+								// check for the actual features and adjust the checkboxes:
+								$('#check1')[0].checked = ($spinbox.data('fancyspinbox').element.has('button.spin-up').length) ? true : false;
+								$('#check2')[0].checked = ($spinbox.data('fancyspinbox').element.has('button.toggle-dropdown').length) ? true : false;
+								$('#check3')[0].checked = ($spinbox.data('fancyspinbox').element.has('.dropdown').length) ? true : false;
 							}
 						});
 					});
