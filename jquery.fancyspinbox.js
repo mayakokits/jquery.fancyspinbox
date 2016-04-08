@@ -212,8 +212,8 @@
 				});
 				
 				// buttons markup
-				var buttonMarkup = (settings.dropdownButton) ? '<button class="toggle-dropdown" tabindex="-1"><span class="triangle-down"></span></button>'
-					: '<button class="spin-up" tabindex="-1"><span class="triangle-up"></span></button><button class="spin-down" tabindex="-1"><span class="triangle-down"></span></button>';
+				var buttonMarkup = (settings.dropdownButton) ? '<button type="button" class="toggle-dropdown" tabindex="-1"><span class="triangle-down"></span></button>'
+					: '<button type="button" class="spin-up" tabindex="-1"><span class="triangle-up"></span></button><button type="button" class="spin-down" tabindex="-1"><span class="triangle-down"></span></button>';
 				if ( settings.spinButtons || settings.dropdownButton ) {
 					$fancy.append('<div class="buttons">' + buttonMarkup + '</div>');
 				} else {
